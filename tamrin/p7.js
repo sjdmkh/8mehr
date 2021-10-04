@@ -1,26 +1,11 @@
-function isPrim1(n){
-    let sum=0;
-    let i=2;
-    while (i<n){
-        if (n % i === 0){
-            sum=1;
-            break
+function isPrim1 (n){
+    for (let i = 2; i < n; i++){
+        if (n% i === 0){
+            return false;
         }
-        i++;
     }
-    if (sum===0) return('yes')
-    else return ('no')
-}
-function findisprim(x,y) {
-
-    let i = x;
-    let arr = [];
-    while (i < y) {
-        if (isprim(i) === 'yes')
-            arr.push(i);
-        i++;
-    }
-    return arr
+    if (n === 1) return false;
+    else return true;
 }
 
 function isHard(n){
@@ -42,23 +27,3 @@ function hardPass(n){
     }
 }
 hardPass(3)
-// function isHard(num){
-//     let temp = num;
-//     while (temp > 0){
-//         temp = (temp - (temp % 10)) / 10;
-//         if (!(isPrim1(temp)))
-//             return false;
-//     }
-//     return true;
-// }
-//
-// function hardPrim1(len) {
-//     let arr= [];
-//     for (let i = 10**(len-1); i < 10**(len); i++){
-//         if (isPrim1(i)){
-//             if (isHard(i))
-//                 arr.push(i)
-//         }
-//     }
-//     return arr;
-// }
